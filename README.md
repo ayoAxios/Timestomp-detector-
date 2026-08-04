@@ -1,5 +1,7 @@
 # Timestomp Detector 
 
+# This is just a vibecoded project that should hopefully detect some shitty timestomped files.
+
 
 A cross‑platform command‑line tool for detecting timestomping anomalies in **MFTECmd** CSV exports (or live MFT parsing). It flags files where the `$STANDARD_INFORMATION` (SI) creation timestamp is older than the `$FILE_NAME` (FN) creation timestamp, optionally considering modification timestamps and various filters to reduce false positives.
 
