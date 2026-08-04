@@ -1,7 +1,4 @@
-# Timestomp Detector 
-
-# This is just a vibecoded project that should hopefully detect some shitty timestomped files.
-
+# Timestomp Detector is a vibecoded project that will hopefully help find shitty bypasses in pc checks
 
 A cross‑platform command‑line tool for detecting timestomping anomalies in **MFTECmd** CSV exports (or live MFT parsing). It flags files where the `$STANDARD_INFORMATION` (SI) creation timestamp is older than the `$FILE_NAME` (FN) creation timestamp, optionally considering modification timestamps and various filters to reduce false positives.
 
@@ -44,19 +41,12 @@ The resulting `timestomp_detector.exe` runs on any Windows machine without requi
 
 ---
 
-## Usage
-```bash
-# Basic analysis (default 5‑second threshold)
-python timestomp_detector.py -f <path-to-csv>
+##
+**General use command for optimal results**
 
-# High‑drift threshold, strict mode, cluster filter, binary‑only, export results
-python timestomp_detector.py \
-    -f "C:\Users\ayo24\Downloads\H.D9OVMPU7Q6L1E-summary\results\All Custom.Windows.NTFS.MFT.csv" \
-    -t 86400.0 \
-    --strict \
-    --cluster-threshold 5 \
-    --only-binaries \
-    -o "detected_strict.csv"
+```bash
+timestomp_detector.exe -f "path to csv" -t 86400.0 --strict --cluster-threshold 5 --only-binaries -o "detected.csv"
+```
 ```
 
 ### Command‑Line Options
@@ -96,12 +86,5 @@ The tool prints a concise table (first 50 rows) to the console and writes a CSV 
 
 ---
 
-## License & Credits
-- Written by **Senior DFIR Engineer** – © 2026.
-- Based on Eric Zimmerman's **MFTECmd** output format.
-- Binary‑only filter and deduplication are custom enhancements.
 
----
 
-## Support
-Open an issue in the repository or contact the author for questions about false‑positive tuning, additional filters, or extending the tool to other forensic sources.
